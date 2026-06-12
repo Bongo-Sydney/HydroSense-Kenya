@@ -1,0 +1,21 @@
+Dataset,Variable,Data_Type,Description,Units,Unique_Values,Sample_Value,Min,Max,Mean,Std_Dev,Median
+Weather,date,str,Date of observation (YYYY-MM-DD),YYYY-MM-DD,27,2026-03-01,N/A,N/A,N/A,N/A,N/A
+Weather,rainfall_mm,float64,Daily rainfall/precipitation amount in millimeters.,mm,21,3.2,0.0,85.0,8.86,16.91,3.0
+Weather,temperature_c,float64,Air temperature measured in degrees Celsius.,°C,23,23.8,21.4,27.4,24.55,1.89,24.6
+Weather,humidity_pct,float64,Relative humidity as percentage of saturation.,%,27,69.7,56.3,74.6,65.53,4.17,64.6
+Weather,wind_speed_mps,float64,Wind speed affecting evapotranspiration rates in m/s.,m/s,25,2.28,1.14,3.07,2.05,0.5,2.11
+Weather,solar_index,float64,Incoming solar radiation for energy balance based on the solar index.,various,19,0.78,0.49,0.8,0.68,0.1,0.7
+Soil,timestamp,str,Time of measurement,HH:MM:SS,30,2026-03-01 12:00,N/A,N/A,N/A,N/A,N/A
+Soil,zone_id,str,Crop zone identifier,various,3,Zone_A,N/A,N/A,N/A,N/A,N/A
+Soil,soil_moisture_pct,float64,Volumetric soil water content in percentage,%,76,33.2,8.5,36.1,27.49,4.54,27.5
+Soil,tank_level_liters,int64,Reservoir or tank water level in litres,L,86,4829,3369,9900,4185.53,717.37,4137.0
+Soil,pump_flow_lpm,float64,Pump flow rate in liters per minute,L/min,65,18.8,15.2,28.8,21.88,3.55,21.65
+Soil,pump_power_watts,int64,Pump power consumption in watts,W,60,437,394,523,459.24,31.64,461.0
+Soil,sensor_status,str,Working status of the sensor,various,2,OK,N/A,N/A,N/A,N/A,N/A
+Parameters,zone_id,str,Crop zone identifier,various,3,Zone_A,N/A,N/A,N/A,N/A,N/A
+Parameters,crop_type,str,The type of crop being cultivated,various,3,tomato,N/A,N/A,N/A,N/A,N/A
+Parameters,area_m2,int64,Area of the land in square meters,m²,3,120,90,180,130.0,45.83,120.0
+Parameters,min_moisture_pct,int64,Minimum soil moisture threshold for irrigation in percentage,%,3,22,20,24,22.0,2.0,22.0
+Parameters,target_moisture_pct,int64,Target soil moisture level for irrigation in percentage,%,3,33,31,35,33.0,2.0,33.0
+Parameters,field_capacity_pct,int64,Field capacity for water retention in percentage,%,3,41,40,43,41.33,1.53,41.0
+Parameters,drainage_coefficient,float64,Drainage coefficient representing water loss from the soil,mm,3,0.18,0.15,0.22,0.18,0.04,0.18

@@ -1,0 +1,12 @@
+Metric,Value
+Cleaning Date,2026-05-14 08:37:41
+Weather Original Rows,30
+Weather Final Rows,27
+Weather Rows Removed,3
+Soil Original Rows,90
+Soil Final Rows,89
+Soil Rows Removed,1
+Parameters Original Rows,3
+Output CSV File,cleaned_irrigation_dataset.csv
+Total Rows in CSV,119
+Total Columns in CSV,21
