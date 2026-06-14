@@ -5,33 +5,88 @@
 **Project:** HydroSense-Kenya  
 
 ---
-
-| Prompt Used                       | AI Output Summary                             | Accepted? | Modified? | Validation Method                               |
-|-----------------------------------|-----------------------------------------------|-----------|-----------|-------------------------------------------------|
-| How would one go about writing a  | Structure provided: 1. Context, 2. Specific problem, 3. Scientific gap, 4. Consequences, 5. Proposed approach, 6. Stakes | 
-| problem statement?
-Partly | Yes: Did not use some subsections of the structure | I compared my resultant problem statement to another from a real-life case study |
-| Show me how one would create a data dictionary | Methods displayed: from existing dataset, using pandas DataFrames, using Python dictionary, along with respective codes | Partly | Yes: Modified code to fit my existing dataset and generate a dictionary | I checked that the dictionary was created in the processed folder |
-| How do I restart kernel in VSCode? | - Click restart button, - Use Command Palette, - Kernel Menu | Yes | None | Kernel restarted and was able to run required libraries well |
-| Generate code for loop-based ET computation | Provided function `et_loop_based()` using Python for-loops | Yes | None | Compared output with manual calculation on sample data |
-| Generate code for vectorized ET computation | Provided function `calculate_et()` using NumPy vectorization | Yes | None | Compared execution time and confirmed identical results |
-| How to compare loop vs vectorized performance? | Provided timing comparison code with `time.time()` and speedup calculation | Yes | Added performance scaling plot | Verified speedup factor matches expected (50-200x for large data) |
-| Demonstrate floating point errors with 0.1 + 0.2 | Showed classic example and explained binary representation | Yes | Added error accumulation example | Manually verified `0.1 + 0.2 != 0.3` |
-| How to simulate sensor noise propagation? | Provided Gaussian noise addition and error metrics calculation | Yes | Added wrong decision percentage metric | Ran experiment showing 5% noise → 20% wrong decisions |
-| Implement bisection method for root finding | Provided complete function with bracketing and tolerance | Yes | Adjusted tolerance to 1e-6 | Tested on f(x)=x²-4, found root at 2.0 |
-| Implement Newton-Raphson method | Provided function requiring derivative, with quadratic convergence | Yes | Added error handling for zero derivative | Tested on f(x)=cos(x)-x, converged in 4 iterations |
-| Implement secant method | Provided function requiring two initial guesses, no derivative needed | Partly | Modified initial guess range | Compared convergence speed against bisection and Newton |
-| Implement numerical differentiation (forward/backward/central) | Provided three difference methods with error analysis | Yes | Added soil moisture rate function | Verified central difference is most accurate O(h²) |
-| Implement Trapezoidal and Simpson's integration rules | Provided composite rules with error order analysis | Yes | Fixed even interval requirement for Simpson | Compared with SciPy's trapezoid() function, difference < 1e-10 |
-| How to solve three-zone water allocation using linear systems? | Provided Gaussian elimination and LU decomposition | Partly | Modified matrix for tomato, kale, maize zones | Verified allocations sum to total available water |
-| Implement Euler method for soil moisture simulation | Provided time-stepping function with drainage term | Yes | Added non-negative moisture constraint | Compared with Runge-Kutta, max difference ~0.5% |
-| Implement Runge-Kutta (4th order) for soil moisture | Provided RK4 function with higher accuracy O(h⁴) | Yes | None | RK4 showed smoother transitions than Euler |
-| How to generate Monte Carlo rainfall scenarios? | Provided bootstrapping function from historical data | Yes | Added n_scenarios parameter | Verified mean of scenarios approximates historical mean |
-| Fix ModuleNotFoundError: No module named 'src' | Provided sys.path.append() solution for path issues | Yes | Added project_root detection | All imports work correctly after adding path fix |
-| How to fix "ValueError: The truth value of an array is ambiguous" | Changed `max(0, et)` to `np.maximum(0, et)` in numerical_methods.py | Yes | Also fixed water_balance function | Array operations now work element-wise without error |
-| How to fix IndexError: invalid index to scalar variable | Corrected optimize_irrigation_schedule to return array instead of scalar | Yes | Modified function to initialize S as np.zeros(n_days) | S_optimized now returns array of length 27 |
-| Fix KeyError: 'ET' not in index | Reordered cells to calculate ET before correlation matrix | Yes | None | ET column now exists before being referenced |
-| How to handle mismatched dimensions (27 vs 30 days)? | Used actual n_days from data instead of hardcoding 30 | Yes | Removed all hardcoded values | All arrays now have consistent length (27) |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Prompt Used                       | AI Output Summary                             | Accepted? | Modified?             | Validation Method                      |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How would one go about writing a  | Structure provided:                           | Partly    | Yes: Did not use some | I compared my resultant problem        |
+| problem statement?                | 1. Context,                                   |           | subsections of the    | statement to another from a real-life  |
+|                                   | 2. Specific problem,                          |           | structure.            | case study.                            |
+|                                   | 3. Scientific gap,                            |           |                       |                                        |
+|                                   | 4. Consequences,                              |           |                       |                                        |
+|                                   | 5. Proposed approach,                         |           |                       |                                        |
+|                                   | 6. Stakes                                     |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Show me how one would create a    | Methods displayed:                            | Partly    | Yes: Modified code to | I checked that the dictionary was      |
+| data dictionary.                  | from existing dataset,                        |           | fit my existing one   | created in the processed folder.       |
+|                                   | using pandas DataFrames,                      |           | and generate a        |                                        |
+|                                   | using Python dictionary,                      |           | dictionary.           |                                        |
+|                                   | along with respective codes.                  |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How do I restart kernel in VSCode?| - Click restart button,                       | Yes       | None                  | Kernel restarted and was able to run   |
+|                                   | - Use Command Palette,                        |           |                       | required libraries well.               |
+|                                   | - Kernel Menu                                 |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Generate code for loop-based ET   | Provided function `et_loop_based()` using     | Yes       | None                  | Compared output with manual calculation|
+| computation. Using formula        | Python for-loops.                             |           |                       | on sample data.                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Generate code for vectorized ET   | Provided function `calculate_et()` using NumPy| Yes       | None                  | Compared execution time and confirmed  |
+| computation.                      | vectorization.                                |           |                       | identical results.                     |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to compare loop vs vectorized | Provided timing comparison code with          | Yes       | Added performance     | Verified speedup factor matches        |
+| performance?                      | `time.time()` and speedup calculation.        |           | scaling plot.         | expected (50-200x for large data)      |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Demonstrate floating point errors | Showed classic example and explained binary   | Yes       | Added error           | Manually verified `0.1 + 0.2 != 0.3`   |
+| with 0.1 + 0.2                    | representation.                               |           | accumulation example. |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to simulate sensor noise      | Provided Gaussian noise addition and error    | Yes       | Added wrong decision  | Ran experiment showing 5% noise → 20%  |
+| propagation?                      | metrics calculation.                          |           | percentage metric.    | wrong decisions.                       |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement bisection method for    | Provided complete function with bracketing    | Yes       | Adjusted tolerance to | Tested on f(x) = x²-4,                 |
+| root finding.                     | and tolerance.                                |           | 1e-6.                 | found root at 2.0                      |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement Newton-Raphson method.  | Provided function requiring derivative, with  | Yes       | Added error handling  | Tested on f(x) = cos(x)-x,             |
+|                                   | quadratic convergence.                        |           | for zero derivative.  | converged in 4 iterations.             |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement secant method.          | Provided function requiring two initial       | Partly    | Modified initial guess| Compared convergence speed against     |
+|                                   | guesses, no derivative needed.                |           | range.                | Bisection and Newton.                  |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement numerical               | Provided three difference methods with error  | Yes       | Added soil moisture   | Verified central difference is most    |
+| differentiation                   | analysis.                                     |           | rate function.        | accurate O(h².)                        |
+| (forward/backward/central.)       |                                               |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement Trapezoidal and         | Provided composite rules with error order     | Yes       | Fixed even interval   | Compared with SciPy's trapezoid()      |
+| Simpson's integration rules.      | analysis.                                     |           | requirement for       | function, difference < 1e-10.          |
+|                                   |                                               |           | Simpson.              |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to solve three-zone water     | Provided Gaussian elimination                 | Partly    | Modified matrix for   | Verified allocations sum to total      |
+| allocation using linear systems?  |                                               |           | tomato, kale, maize   | available water.                       |
+|                                   |                                               |           | zones.                |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement Euler method for soil   | Provided time-stepping function with drainage | Yes       | Added non-negative    | Compared with Runge-Kutta,             |
+| moisture simulation.              | term.                                         |           | moisture constraint.  | max difference ~0.5%.                  |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Implement Runge-Kutta (4th order) | Provided RK4 function with higher accuracy    | Yes       | None                  | RK4 showed smoother transitions than   |
+| for soil moisture.                | O(h⁴.)                                        |           |                       | Euler.                                 |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to generate Monte Carlo       | Provided bootstrapping function from          | Yes       | Added n_scenarios     | Verified mean of scenerios approximates|
+| rainfall scenarios?               | historical data.                              |           | parameter.            | historic means.                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Fix ModuleNotFoundError: No module| Provided sys.path.append() solution for path  | Yes       | Added project_root    | All imports work correctly after adding|
+| named 'src.'                      | issues.                                       |           | detection.            | path fix.                              |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to fix "ValueError: The truth | Changed `max(0, et)` to `np.maximum(0, et)`   | Yes       | Also fixed water_bal  | Array operations now work element-wise |
+| value of an array is ambiguous."  | in numerical_methods.py.                      |           | function.             | without error.                         |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to fix IndexError: invalid    | Corrected optimize_irrigation_schedule to     | Yes       | Modified function to  | S_optimized now returns array of length|
+| index to scalar variable.         | return array instead of scalar.               |           | initialize S as       | 27.                                    |
+|                                   |                                               |           | np.zeros(n_days.)     |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| Fix KeyError: 'ET' not in index   | Reordered cells to calculate ET before        | Yes       | None                  | ET column now exists before being      |
+|                                   | correlation matrix                            |           |                       | referenced.                            |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| How to handle mismatched          | Used actual n_days from data instead of       | Yes       | Removed all hardcoded | All arrays now have consistent length  |
+| dimensions (27 vs 30 days)?       | hardcoding 30.                                |           | values                | (27.)                                  |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 
 ---
 
@@ -42,5 +97,5 @@ Partly | Yes: Did not use some subsections of the structure | I compared my resu
 - **Total partially accepted (modified):** 8
 - **Total rejected:** 0
 
-**Validation Statement:** All AI-generated code and explanations have been manually reviewed, tested, and validated against project requirements and scientific correctness. The final submission represents my own understanding and work.
+**Validation Statement:** All AI-generated code and explanations have been manually reviewed, tested, and validated against project requirements and scientific correctness. The final submission represents my own understanding and work. Comments have also been written to explain the code for further understanding.
 
