@@ -5,7 +5,7 @@
 **Project:** HydroSense-Kenya  
 ## NOTE: SLIGHTLY ZOOM OUT TO VIEW TABLE PROPERLY.
 ---
-|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+
 | Prompt Used                       | AI Output Summary                             | Accepted? | Modified?             | Validation Method                      |
 |-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 | How would one go about writing a  | Structure provided:                           | Partly    | Yes: Did not use some | I compared my resultant problem        |
