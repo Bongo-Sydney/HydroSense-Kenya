@@ -3,11 +3,11 @@
 **Student Name:** Bongo Sydney Meshack  
 **Course:** ICS 2207 Scientific Computing  
 **Project:** HydroSense-Kenya  
-
+## NOTE: SLIGHTLY ZOOM OUT TO VIEW TABLE PROPERLY.
 ---
-|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+
 | Prompt Used                       | AI Output Summary                             | Accepted? | Modified?             | Validation Method                      |
-|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+|                                   |                                               |           |                       |                                        |
 | How would one go about writing a  | Structure provided:                           | Partly    | Yes: Did not use some | I compared my resultant problem        |
 | problem statement?                | 1. Context,                                   |           | subsections of the    | statement to another from a real-life  |
 |                                   | 2. Specific problem,                          |           | structure.            | case study.                            |
@@ -15,13 +15,13 @@
 |                                   | 4. Consequences,                              |           |                       |                                        |
 |                                   | 5. Proposed approach,                         |           |                       |                                        |
 |                                   | 6. Stakes                                     |           |                       |                                        |
-|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+|                                   |                                               |           |                       |                                        |
 | Show me how one would create a    | Methods displayed:                            | Partly    | Yes: Modified code to | I checked that the dictionary was      |
 | data dictionary.                  | from existing dataset,                        |           | fit my existing one   | created in the processed folder.       |
 |                                   | using pandas DataFrames,                      |           | and generate a        |                                        |
 |                                   | using Python dictionary,                      |           | dictionary.           |                                        |
 |                                   | along with respective codes.                  |           |                       |                                        |
-|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+|                                   |                                               |           |                       |                                        |
 | How do I restart kernel in VSCode?| - Click restart button,                       | Yes       | None                  | Kernel restarted and was able to run   |
 |                                   | - Use Command Palette,                        |           |                       | required libraries well.               |
 |                                   | - Kernel Menu                                 |           |                       |                                        |
@@ -87,6 +87,8 @@
 | How to handle mismatched          | Used actual n_days from data instead of       | Yes       | Removed all hardcoded | All arrays now have consistent length  |
 | dimensions (27 vs 30 days)?       | hardcoding 30.                                |           | values                | (27.)                                  |
 |-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
+| What would typically be required  | - Project Languages                           | Yes       | None                  | Compared against my libraries and      |
+| in a requirements.txt file?       | - Used Libraries along with their versions.   |           |                       | languages.                             |
 
 ---
 
