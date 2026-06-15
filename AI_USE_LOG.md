@@ -7,7 +7,7 @@
 ---
 
 | Prompt Used                       | AI Output Summary                             | Accepted? | Modified?             | Validation Method                      |
-|                                   |                                               |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 | How would one go about writing a  | Structure provided:                           | Partly    | Yes: Did not use some | I compared my resultant problem        |
 | problem statement?                | 1. Context,                                   |           | subsections of the    | statement to another from a real-life  |
 |                                   | 2. Specific problem,                          |           | structure.            | case study.                            |
@@ -15,13 +15,13 @@
 |                                   | 4. Consequences,                              |           |                       |                                        |
 |                                   | 5. Proposed approach,                         |           |                       |                                        |
 |                                   | 6. Stakes                                     |           |                       |                                        |
-|                                   |                                               |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 | Show me how one would create a    | Methods displayed:                            | Partly    | Yes: Modified code to | I checked that the dictionary was      |
 | data dictionary.                  | from existing dataset,                        |           | fit my existing one   | created in the processed folder.       |
 |                                   | using pandas DataFrames,                      |           | and generate a        |                                        |
 |                                   | using Python dictionary,                      |           | dictionary.           |                                        |
 |                                   | along with respective codes.                  |           |                       |                                        |
-|                                   |                                               |           |                       |                                        |
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 | How do I restart kernel in VSCode?| - Click restart button,                       | Yes       | None                  | Kernel restarted and was able to run   |
 |                                   | - Use Command Palette,                        |           |                       | required libraries well.               |
 |                                   | - Kernel Menu                                 |           |                       |                                        |
@@ -89,13 +89,13 @@
 |-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 | What would typically be required  | - Project Languages                           | Yes       | None                  | Compared against my libraries and      |
 | in a requirements.txt file?       | - Used Libraries along with their versions.   |           |                       | languages.                             |
-
+|-----------------------------------|-----------------------------------------------|-----------|-----------------------|----------------------------------------|
 ---
 
 ## Summary of AI Usage
 
-- **Total AI prompts used:** 22
-- **Total fully accepted (no modification):** 14
+- **Total AI prompts used:** 23
+- **Total fully accepted (no modification):** 15
 - **Total partially accepted (modified):** 8
 - **Total rejected:** 0
 
